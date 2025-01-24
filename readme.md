@@ -24,14 +24,14 @@ npm install
 3. Configure environment variables
    Create a .env.local file in project directory and add the enviroment variable
    ```bash
-     - `PORT=3000 # Replace with your desired port number
-     - `MONGO_URL=mongodb+srv://kumarsateesh838:Newkapass1!@cluster0.c4djp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0 # Replace with your own 
+     - `PORT = 3000 # Replace with your desired port number
+     - `MONGO_URL = mongodb+srv://kumarsateesh838:Newkapass1!@cluster0.c4djp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0 # Replace with your own 
      connection string
-     - `SECRET_KEY=rtiugh489u6ngiy895jgberhj # Replace with your own secret key
+     - `SECRET_KEY = rtiugh489u6ngiy895jgberhj # Replace with your own secret key
    ```
-5. Start  backenduser service
+4. Start  backenduser service
 ```bash
-npm start
+npm run dev
 ```
 
 ### Key Endpoints
