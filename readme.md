@@ -1,4 +1,4 @@
-# SWE Backend Project
+# SWE Backend Project(backenduser)
 
 ## Overview
 This project implements two interconnected backend services with role-based access control (RBAC) using TypeScript, Express, Node.js, and MongoDB.
@@ -14,7 +14,7 @@ This project implements two interconnected backend services with role-based acce
 - MongoDB
 - JWT Authentication
 
-## Backend 1: User Backend Features
+## backenduser: User Backend Features
 - User registration and authentication
 - CRUD operations for user notes
 - Secure data sharing with Admin Backend
@@ -22,32 +22,43 @@ This project implements two interconnected backend services with role-based acce
 ### Key Endpoints
 - `POST /auth/register`: User registration
 - `POST /auth/login`: User login
-- `GET /notes`: Fetch user notes
+- `GET /notes`: Fetch user's notes
 - `POST /notes`: Create new note
 - `PATCH /notes/:id`: Update note
 - `DELETE /notes/:id`: Delete note
 
-## Backend 2: Admin Backend Features
-- Admin authentication
-- User profile management
-- Cross-backend data retrieval
-- Audit logging
+### 1. `POST (http://localhost:3000)/auth/register` - User Registration
 
-### Key Endpoints
-- `POST /auth/login`: Admin login
-- `GET /users`: Fetch all user profiles
-- `GET /users/:id`: Get specific user details
-- `DELETE /users/:id`: Delete user profile
-- `GET /audit/notes`: Retrieve notes from User Backend
+#### Request:
+```
+{
+    "name":"sahil",
+    "email":"kumarsahil838@gmail.com",
+    "password":"12Sateesh!hfh",
+    "password_cofirmation":"12Sateesh!hfh"
+}
+```
+#### Response:
+```
+{
+    "message": "User registered successfully"
+}
+```
+
 
 ## Setup Instructions
-1. Clone the repository
-2. Install dependencies in each backend directory
+1. Clone the repository(backenduser)
+2. Install dependencies in the project directory
 ```bash
 npm install
 ```
 3. Configure environment variables
-4. Start each backend service
+   Create a .env.local file in project directory and add the enviroment variable
+     PORT=3000 # Replace with your desired port number
+     MONGO_URL=mongodb+srv://kumarsateesh838:Newkapass1!@cluster0.c4djp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0 # Replace with your own 
+     connection string
+     SECRET_KEY=rtiugh489u6ngiy895jgberhj # Replace with your own secret key
+5. Start  backenduser service
 ```bash
 npm start
 ```
@@ -59,14 +70,8 @@ npm start
 - Input validation
 - Error handling
 
-## Database
-- Shared MongoDB cluster
-- Separate collections for users and notes
-- Secure data access controls
 
-## Documentation
-- Detailed README in each backend directory
-- Postman collection for API testing
 
-## License
-[Specify your license]
+
+
+
