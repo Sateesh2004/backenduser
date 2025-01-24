@@ -1,11 +1,7 @@
 # SWE Backend Project(backenduser)
 
 ## Overview
-This project implements two interconnected backend services with role-based access control (RBAC) using TypeScript, Express, Node.js, and MongoDB.
-
-## Project Structure
-- `backenduser/`: User-focused backend service
-- `backendadmin/`: Administrative backend service
+This project implements backend for user's services.
 
 ## Technologies
 - TypeScript
@@ -18,6 +14,25 @@ This project implements two interconnected backend services with role-based acce
 - User registration and authentication
 - CRUD operations for user notes
 - Secure data sharing with Admin Backend
+
+## Setup Instructions
+1. Clone the repository(backenduser)
+2. Install dependencies in the project directory
+```bash
+npm install
+```
+3. Configure environment variables
+   Create a .env.local file in project directory and add the enviroment variable
+   ```bash
+     - `PORT=3000 # Replace with your desired port number
+     - `MONGO_URL=mongodb+srv://kumarsateesh838:Newkapass1!@cluster0.c4djp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0 # Replace with your own 
+     connection string
+     - `SECRET_KEY=rtiugh489u6ngiy895jgberhj # Replace with your own secret key
+   ```
+5. Start  backenduser service
+```bash
+npm start
+```
 
 ### Key Endpoints
 - `POST /auth/register`: User registration
@@ -140,27 +155,7 @@ hit the url
 ```
 #### Response:
 ```
-no message as delete operation return no content.
-```
-
-
-## Setup Instructions
-1. Clone the repository(backenduser)
-2. Install dependencies in the project directory
-```bash
-npm install
-```
-3. Configure environment variables
-   Create a .env.local file in project directory and add the enviroment variable
-   ```bash
-     - `PORT=3000 # Replace with your desired port number
-     - `MONGO_URL=mongodb+srv://kumarsateesh838:Newkapass1!@cluster0.c4djp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0 # Replace with your own 
-     connection string
-     - `SECRET_KEY=rtiugh489u6ngiy895jgberhj # Replace with your own secret key
-   ```
-5. Start  backenduser service
-```bash
-npm start
+no message as delete operation returns no content.
 ```
 
 ## Security Features
