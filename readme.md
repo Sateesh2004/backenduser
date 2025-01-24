@@ -10,7 +10,7 @@ This project implements backend for user's services.
 - MongoDB
 - JWT Authentication
 
-## backenduser: User Backend Features
+## User Backend: User Backend Features
 - User registration and authentication
 - CRUD operations for user notes
 - Secure data sharing with Admin Backend
@@ -42,7 +42,7 @@ npm run dev
 - `PATCH /notes/:id`: Update note
 - `DELETE /notes/:id`: Delete note
 
-### 1. `POST (http://localhost:3000)/auth/register` - User Registration
+### 1. `POST (http://localhost:9000)/auth/register` - User Registration
 
 #### Request:
 ```
@@ -61,7 +61,7 @@ npm run dev
 ```
 
 
-### 2. `POST (http://localhost:3000)/auth/login` - User Login
+### 2. `POST (http://localhost:9000)/auth/login` - User Login
 
 #### Request:
 ```
@@ -81,7 +81,7 @@ npm run dev
 ```
 
 
-### 3. `GET (http://localhost:3000)/notes` - Fetch User's Notes
+### 3. `GET (http://localhost:9000)/notes` - Fetch User's Notes
 
 #### Request:
 ```
@@ -108,7 +108,7 @@ hit the url but first it may show you empty if there are no notes create by user
 ```
 
 
-### 4. `POST (http://localhost:3000)/notes` - Create New Note
+### 4. `POST (http://localhost:9000)/notes` - Create New Note
 
 #### Request:
 ```
@@ -132,7 +132,7 @@ hit the url but first it may show you empty if there are no notes create by user
 ```
 
 
-### 5. `PATCH (http://localhost:3000)/notes/idofthenote(6793e42bc4e8efd6af79d096)` - Update Note
+### 5. `PATCH (http://localhost:9000)/notes/idofthenote(6793e42bc4e8efd6af79d096)` - Update Note
 
 #### Request:
 ```
@@ -147,7 +147,7 @@ hit the url but first it may show you empty if there are no notes create by user
 ```
 
 
-### 6. `DELETE (http://localhost:3000)/note/ifofthenode(6793e42bc4e8efd6af79d096)` - Delete Note
+### 6. `DELETE (http://localhost:9000)/note/ifofthenode(6793e42bc4e8efd6af79d096)` - Delete Note
 
 #### Request:
 ```
