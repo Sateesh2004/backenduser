@@ -1,11 +1,7 @@
-# SWE Backend Project
+# SWE Backend Project(backenduser)
 
 ## Overview
-This project implements two interconnected backend services with role-based access control (RBAC) using TypeScript, Express, Node.js, and MongoDB.
-
-## Project Structure
-- `backenduser/`: User-focused backend service
-- `backendadmin/`: Administrative backend service
+This project implements backend for user's services.
 
 ## Technologies
 - TypeScript
@@ -14,42 +10,152 @@ This project implements two interconnected backend services with role-based acce
 - MongoDB
 - JWT Authentication
 
-## Backend 1: User Backend Features
+## User Backend: User Backend Features
 - User registration and authentication
 - CRUD operations for user notes
 - Secure data sharing with Admin Backend
 
-### Key Endpoints
-- `POST /auth/register`: User registration
-- `POST /auth/login`: User login
-- `GET /notes`: Fetch user notes
-- `POST /notes`: Create new note
-- `PATCH /notes/:id`: Update note
-- `DELETE /notes/:id`: Delete note
-
-## Backend 2: Admin Backend Features
-- Admin authentication
-- User profile management
-- Cross-backend data retrieval
-- Audit logging
-
-### Key Endpoints
-- `POST /auth/login`: Admin login
-- `GET /users`: Fetch all user profiles
-- `GET /users/:id`: Get specific user details
-- `DELETE /users/:id`: Delete user profile
-- `GET /audit/notes`: Retrieve notes from User Backend
-
 ## Setup Instructions
-1. Clone the repository
-2. Install dependencies in each backend directory
+1. Clone the repository(backenduser)
+2. Install dependencies in the project directory
 ```bash
 npm install
 ```
 3. Configure environment variables
-4. Start each backend service
+   Create a .env.local file in project directory and add the enviroment variable
+   ```bash
+     - `PORT = 9000 # Replace with your desired port number
+     - `MONGO_URL = mongodb+srv://kumarsateesh838:Newkapass1!@cluster0.c4djp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0 # Replace with your own connection string
+     - `SECRET_KEY = rtiugh489u6ngiy895jgberhj # Replace with your own secret key
+     - `BACKENDADMIN_URL = http://localhost:4000 #Replace with your own backenduser url
+   ```
+4. Start  backenduser service
 ```bash
-npm start
+npm run dev
+```
+
+### Key Endpoints
+- `POST /auth/register`: User registration
+- `POST /auth/login`: User login
+- `GET /notes`: Fetch user's notes
+- `POST /notes`: Create new note
+- `PATCH /notes/:id`: Update note
+- `DELETE /notes/:id`: Delete note
+
+### 1. `POST (http://localhost:9000)/auth/register` - User Registration
+
+#### Request:
+```
+{
+    "name":"sahil",
+    "email":"kumarsahil838@gmail.com",
+    "password":"12Sateesh!hfh",
+    "password_cofirmation":"12Sateesh!hfh"
+}
+```
+#### Response:
+```
+{
+    "message": "User registered successfully"
+}
+```
+
+
+### 2. `POST (http://localhost:9000)/auth/login` - User Login
+
+#### Request:
+```
+{
+    "email":"kumarsahil838@gmail.com",
+    "password":"12Sateesh!hfh"
+}
+```
+#### Response:
+```
+{
+    "message": "User signed in successfully",
+    "username": "sahil",
+    "email": "kumarsahil838@gmail.com",
+    "role": "user"
+}
+```
+
+
+### 3. `GET (http://localhost:9000)/notes` - Fetch User's Notes
+
+#### Request:
+```
+hit the url but first it may show you empty if there are no notes create by user so first create notes and then hit the url then it will return all the notes.
+```
+#### Response:
+```
+[
+    {
+        "_id": "6793e42bc4e8efd6af79d096",
+        "title": "Home",
+        "description": "This is my home",
+        "userId": "6793e1c5c4e8efd6af79d092",
+        "__v": 0
+    },
+    {
+        "_id": "6793e440c4e8efd6af79d098",
+        "title": "Hotel",
+        "description": "This is my hotel",
+        "userId": "6793e1c5c4e8efd6af79d092",
+        "__v": 0
+    }
+]
+```
+
+
+### 4. `POST (http://localhost:9000)/notes` - Create New Note
+
+#### Request:
+```
+{
+    "title":"Hotel",
+    "description":"This is my hotel"
+}
+```
+#### Response:
+```
+{
+    "message": "Note created successfully",
+    "note_details": {
+        "title": "Hotel",
+        "description": "This is my hotel",
+        "userId": "6793e1c5c4e8efd6af79d092",
+        "_id": "6793e440c4e8efd6af79d098",
+        "__v": 0
+    }
+}
+```
+
+
+### 5. `PATCH (http://localhost:9000)/notes/idofthenote(6793e42bc4e8efd6af79d096)` - Update Note
+
+#### Request:
+```
+{
+  "title": "Updated Note Title",
+  "description": "This is the updated description of the note"
+}
+```
+#### Response:
+```
+6793e42bc4e8efd6af79d096
+```
+
+
+### 6. `DELETE (http://localhost:9000)/note/ifofthenode(6793e42bc4e8efd6af79d096)` - Delete Note
+
+#### Request:
+```
+hit the url
+```
+#### Response:
+```
+no message as delete operation returns no content.
 ```
 
 ## Security Features
@@ -59,14 +165,8 @@ npm start
 - Input validation
 - Error handling
 
-## Database
-- Shared MongoDB cluster
-- Separate collections for users and notes
-- Secure data access controls
 
-## Documentation
-- Detailed README in each backend directory
-- Postman collection for API testing
 
-## License
-[Specify your license]
+
+
+
